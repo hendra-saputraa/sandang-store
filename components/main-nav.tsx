@@ -1,8 +1,6 @@
 "use client";
 
-import React from 'react';
-import Link from "next/link";
-
+import Link from "next/link"
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils"
@@ -37,7 +35,7 @@ const MainNav: React.FC<MainNavProps> = ({
           )}
         >
           {route.label}
-        </Link>
+      </Link>
       ))}
     </nav>
   )
