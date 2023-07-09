@@ -1,11 +1,15 @@
 "use client";
 
 import React from 'react';
-import Link from "next/link"
+import Link from "next/link";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils"
 import { Category } from "@/types";
+
+import 'swiper/css';
 
 interface MainNavProps {
   data: Category[];
@@ -35,8 +39,10 @@ const MainNav: React.FC<MainNavProps> = ({
             route.active ? 'text-black' : 'text-neutral-500'
           )}
         >
-          {route.label}
-      </Link>
+          <Swiper slidesPerView={2}>
+            <SwiperSlide>{route.label}</SwiperSlide>
+          </Swiper>
+        </Link>
       ))}
     </nav>
   )
