@@ -17,23 +17,36 @@ const NavbarActions = () => {
   const router = useRouter();
   const cart = useCart();
 
-  if (!isMounted) {
+  if(!isMounted) {
     return null;
   }
 
-  return ( 
-    <div className="ml-auto flex items-center gap-x-4">
-      <Button onClick={() => router.push('/keranjang')} className="flex items-center rounded-full bg-black px-4 py-2">
-        <ShoppingBag
-          size={20}
-          color="white"
-        />
-        <span className="ml-2 text-sm font-medium text-white">
-          {cart.items.length}
-        </span>
-      </Button>
-    </div>
+  return (
+    <>
+      <div className="ml-auto flex items-center gap-x-1">
+        <Button onClick={() => router.push('/keranjang')} className="flex items-center rounded-full bg-black px-1 py-1">
+          <ShoppingBag
+            size={15}
+            color="white"
+          />
+          <span className="ml-1 text-xs font-medium text-white">
+            {cart.items.length}
+          </span>
+        </Button>
+      </div>
+      <div className="ml-auto hidden md:flex items-center gap-x-4">
+        <Button onClick={() => router.push('/keranjang')} className="flex items-center rounded-full bg-black px-4 py-2">
+          <ShoppingBag
+            size={20}
+            color="white"
+          />
+          <span className="ml-2 text-sm font-medium text-white">
+            {cart.items.length}
+          </span>
+        </Button>
+      </div>
+    </>
   );
 }
- 
+
 export default NavbarActions;
